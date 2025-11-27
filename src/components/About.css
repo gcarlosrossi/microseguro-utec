@@ -1,0 +1,100 @@
+
+:root {
+  /* Ajusta estos colores si tu branding tiene hex específicos */
+  --sv-bg: #eaf6ff;          /* fondo celeste muy claro */
+  --sv-title: #0b4a6f;       /* azul del título */
+  --sv-text: #4b6f88;        /* gris/azul del párrafo */
+  --sv-orange: #ff7a00;      /* naranja principal */
+  --sv-orange-top: #ff8a1a;  /* para el gradiente */
+  --sv-orange-hover: #e86700;
+}
+
+/* --- SECCIÓN --- */
+.sv-about {
+  /* Reset para evitar estilos de .intro, bootstrap, etc. */
+  all: unset;
+  display: block;
+  background: var(--sv-bg);
+  padding: 54px 20px;
+  box-sizing: border-box;
+}
+
+.sv-about-container {
+  max-width: 780px;            /* ancho del bloque centrado */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- ICONO NARANJA --- */
+.sv-about-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--sv-orange-top) 0%, var(--sv-orange) 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 22px rgba(255, 122, 0, 0.35); /* sombra suave */
+}
+
+/* --- TÍTULO --- */
+/* Reset fuerte para que no herede uppercase/linea decorativa */
+.sv-about-title {
+  all: unset;
+  display: block;
+  font-size: 20px;             /* igual a la referencia (no excesivo) */
+  font-weight: 700;            /* negrita controlada */
+  color: var(--sv-title);
+  margin: 8px 0 12px;
+  letter-spacing: 0;           /* evita tracking exagerado */
+  text-transform: none;        /* IMPORTANT: evita mayúsculas globales */
+}
+
+/* Si algún global agrega pseudo-elementos decorativos al h2, los apagamos */
+.sv-about-title::before,
+.sv-about-title::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* --- PÁRRAFO --- */
+.sv-about-text {
+  all: unset;
+  display: block;
+  margin: 0 auto 18px;
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--sv-text);
+}
+
+/* --- BOTÓN CTA --- */
+.sv-about-cta {
+  all: unset;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;        /* pill redondo */
+  background: linear-gradient(180deg, var(--sv-orange-top) 0%, var(--sv-orange) 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(255, 122, 0, 0.35); /* sombra claro-naranja */
+  transition: transform 120ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.sv-about-cta:hover {
+  background: var(--sv-orange-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(232, 103, 0, 0.35);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 480px) {
+  .sv-about { padding: 40px 16px; }
+  .sv-about-icon { width: 52px; height: 52px; border-radius: 14px; }
+  .sv-about-title { font-size: 18px; }
+  .sv-about-text { font-size: 14px; }
+}

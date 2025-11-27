@@ -1,0 +1,128 @@
+
+/* ===== Variables de diseño ===== */
+:root {
+  /* Fondo degradado suave (arriba celeste muy claro -> abajo melocotón muy sutil) */
+  --sv-bg-top: #eef7ff;
+  --sv-bg-bottom: #fff4ea;
+
+  /* Colores de texto */
+  --sv-title: #0b4a6f;
+  --sv-muted: #4b6f88;
+
+  /* Tamaños/radios */
+  --sv-pill-size: 56px;
+  --sv-pill-radius: 16px;
+}
+
+/* ===== Sección principal ===== */
+/* Reset para evitar herencias del tema (uppercase en h2, líneas decorativas, etc.) */
+.sv-details {
+  all: unset;
+  display: block;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, var(--sv-bg-top) 0%, var(--sv-bg-bottom) 100%);
+  box-sizing: border-box;
+}
+
+.sv-details-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ===== Título ===== */
+.sv-details-title {
+  all: unset;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sv-title);
+  margin-bottom: 22px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.sv-details-title::before,
+.sv-details-title::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* ===== Grid de pasos ===== */
+.sv-steps {
+  all: unset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.sv-step {
+  list-style: none;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  row-gap: 10px;
+}
+
+/* ===== Píldora con número ===== */
+.sv-step-pill {
+  width: var(--sv-pill-size);
+  height: var(--sv-pill-size);
+  border-radius: var(--sv-pill-radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Sombras suaves, estilo “gel” */
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+.sv-step-number {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Variantes de color (gradiente + sombra con tinte del color) */
+.sv-blue {
+  background: linear-gradient(180deg, #12a9ff 0%, #0aa2ff 100%);
+  box-shadow: 0 12px 22px rgba(10, 162, 255, 0.30);
+}
+.sv-orange {
+  background: linear-gradient(180deg, #ff8a1a 0%, #ff7a00 100%);
+  box-shadow: 0 12px 22px rgba(255, 122, 0, 0.30);
+}
+.sv-green {
+  background: linear-gradient(180deg, #2fd36c 0%, #22c55e 100%);
+  box-shadow: 0 12px 22px rgba(34, 197, 94, 0.28);
+}
+.sv-purple {
+  background: linear-gradient(180deg, #a261ff 0%, #8a44ff 100%);
+  box-shadow: 0 12px 22px rgba(138, 68, 255, 0.30);
+}
+
+/* ===== Textos ===== */
+.sv-step-title {
+  all: unset;
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--sv-title);
+}
+.sv-step-text {
+  all: unset;
+  display: block;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sv-muted);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 992px) {
+  .sv-steps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .sv-steps { grid-template-columns: 1fr; }
+  .sv-details { padding: 32px 16px; }
+  :root { --sv-pill-size: 52px; --sv-pill-radius: 14px; }
+}

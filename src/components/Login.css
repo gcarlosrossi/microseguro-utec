@@ -1,0 +1,130 @@
+
+:root {
+  --sv-bg-top: #eef7ff;
+  --sv-bg-bottom: #fff4ea;
+  --sv-blue: #0aa2ff;
+  --sv-blue-dark: #007acc;
+  --sv-text: #003366;
+  --sv-muted: #4b6f88;
+}
+
+/* Fondo degradado */
+.sv-login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, var(--sv-bg-top) 0%, var(--sv-bg-bottom) 100%);
+  padding: 20px;
+}
+
+/* Contenedor del formulario */
+.sv-login-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Logo y título */
+.sv-login-header .sv-logo-pill {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--sv-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+.sv-logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--sv-text);
+}
+.sv-login-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+.sv-login-subtitle {
+  font-size: 14px;
+  color: var(--sv-muted);
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.sv-login-form .sv-form-group {
+  margin-bottom: 14px;
+}
+.sv-login-form input[type="email"],
+.sv-login-form input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d9e6f2;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.sv-login-form input:focus {
+  outline: none;
+  border-color: var(--sv-blue);
+}
+
+/* Opciones */
+.sv-form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.sv-remember {
+  color: var(--sv-muted);
+}
+.sv-link {
+  color: var(--sv-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+.sv-link:hover {
+  text-decoration: underline;
+}
+
+/* Botón principal */
+.sv-btn-primary {
+  width: 100%;
+  background: var(--sv-blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(10, 162, 255, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.sv-btn-primary:hover {
+  background: var(--sv-blue-dark);
+  transform: translateY(-2px);
+}
+
+/* Footer links */
+.sv-login-footer {
+  margin-top: 16px;
+  font-size: 13px;
+}
+.sv-back-home {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: var(--sv-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+.sv-back-home:hover {
+  text-decoration: underline;
+}

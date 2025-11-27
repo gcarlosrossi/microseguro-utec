@@ -1,0 +1,119 @@
+
+:root {
+  --sv-blue: #0aa2ff;
+  --sv-blue-dark: #007acc;
+  --sv-text: #0b3351;
+  --sv-muted: #55738f;
+}
+
+/* Header sticky y por encima del scroll */
+.sv-nav-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Contenedor interno */
+.sv-nav-in__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand (logo + texto) */
+.sv-nav-in__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sv-logo-pill {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sv-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(10,162,255,0.25);
+}
+.sv-logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sv-text);
+}
+
+/* Acciones derecha */
+.sv-nav-in__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sv-greet {
+  color: var(--sv-muted);
+  font-size: 14px;
+}
+
+/* Botón outline no deformado */
+.sv-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;              /* espacio entre icono y texto */
+  padding: 10px 18px;    /* alto/anchura uniformes */
+  min-width: 140px;      /* evita deformación y salto de línea */
+  white-space: nowrap;   /* el texto no se parte */
+  background: #fff;
+  border: 2px solid var(--sv-blue);
+  border-radius: 10px;
+  color: var(--sv-blue);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.sv-btn-outline:hover {
+  background: #e6f4ff;
+  box-shadow: 0 8px 16px rgba(10,162,255,0.18);
+  transform: translateY(-1px);
+}
+
+.sv-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+.sv-btn-text {
+  line-height: 1;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .sv-nav-in__container {
+    padding: 10px 16px;
+  }
+  .sv-greet {
+    display: none; /* oculta saludo en pantallas pequeñas */
+  }
+  .sv-btn-outline {
+    min-width: 120px;
+    padding: 8px 14px;
+  }
+}
+
+/* Evita que el contenido quede oculto bajo el header fijo */
+body {
+  padding-top: 68px; /* altura aproximada del header */
+}

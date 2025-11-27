@@ -1,0 +1,67 @@
+
+:root {
+  --sv-blue-light: #0aa2ff;
+  --sv-blue-dark: #006bb3;
+  --sv-white: #ffffff;
+  --sv-text-light: #ffffff;
+  --sv-btn-text: #006bb3;
+}
+
+/* Contenedor principal */
+.sv-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Parte superior con fondo azul degradado */
+.sv-footer-top {
+  width: 100%;
+  background: linear-gradient(180deg, var(--sv-blue-light) 0%, var(--sv-blue-dark) 100%);
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--sv-text-light);
+}
+
+/* Título */
+.sv-footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Subtítulo */
+.sv-footer-subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Botón blanco */
+.sv-footer-btn {
+  background-color: var(--sv-white);
+  color: var(--sv-btn-text);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sv-footer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Parte inferior con fondo blanco */
+.sv-footer-bottom {
+  width: 100%;
+  background-color: var(--sv-white);
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  padding: 12px 20px;
+}

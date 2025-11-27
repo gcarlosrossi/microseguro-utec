@@ -1,0 +1,133 @@
+
+:root {
+  /* Colores de marca y UI */
+  --sv-blue-300: #cfe9f8;           /* borde celeste de las tarjetas */
+  --sv-blue-50: #f4fbff;            /* fondo muy claro dentro de la tarjeta */
+  --sv-title: #0b4a6f;
+  --sv-text: #4b6f88;
+
+  --sv-green: #22c55e;
+  --sv-green-top: #31d46e;
+
+  --sv-orange: #ff7a00;
+  --sv-orange-top: #ff8a1a;
+
+  --sv-blue: #0aa2ff;
+  --sv-blue-top: #12a9ff;
+
+  --sv-radius-card: 14px;
+  --sv-radius-pill: 16px;
+}
+
+/* --- Sección --- */
+.sv-features {
+  /* Reset para evitar herencias de bootstrap/template */
+  all: unset;
+  display: block;
+  padding: 40px 20px;
+  background: #fff; /* La referencia no muestra fondo de color en toda la sección */
+  box-sizing: border-box;
+}
+
+.sv-features-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* --- Título centrado --- */
+.sv-features-title {
+  all: unset;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sv-title);
+  margin-bottom: 18px;
+}
+
+/* --- Grid de tarjetas --- */
+.sv-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* --- Tarjeta --- */
+.sv-card {
+  background: var(--sv-blue-50);
+  border: 2px solid var(--sv-blue-300);
+  border-radius: var(--sv-radius-card);
+  padding: 18px;
+  box-shadow: 0 8px 18px rgba(10, 162, 255, 0.06);
+  display: grid;
+  grid-template-columns: 56px 1fr;   /* icono + contenido */
+  grid-template-rows: auto auto;
+  grid-column-gap: 16px;
+  align-items: start;
+}
+
+/* --- Icono pill con gradiente y sombra --- */
+.sv-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--sv-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Variantes de color (como en la imagen: verde, naranja, azul) */
+.sv-green {
+  background: linear-gradient(180deg, var(--sv-green-top) 0%, var(--sv-green) 100%);
+}
+
+.sv-orange {
+  background: linear-gradient(180deg, var(--sv-orange-top) 0%, var(--sv-orange) 100%);
+  box-shadow: 0 10px 18px rgba(255, 122, 0, 0.25);
+}
+
+.sv-blue {
+  background: linear-gradient(180deg, var(--sv-blue-top) 0%, var(--sv-blue) 100%);
+  box-shadow: 0 10px 18px rgba(10, 162, 255, 0.25);
+}
+
+/* --- Título y texto dentro de la tarjeta --- */
+.sv-card-title {
+  all: unset;
+  grid-column: 2 / 3;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sv-title);
+  margin-bottom: 6px;
+}
+
+.sv-card-text {
+  all: unset;
+  grid-column: 2 / 3;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sv-text);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 992px) {
+  .sv-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sv-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .sv-card {
+    grid-template-columns: 52px 1fr;
+    border-radius: 12px;
+  }
+  .sv-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+}
